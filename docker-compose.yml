@@ -1,0 +1,36 @@
+﻿version: "3.7"
+
+
+networks:
+  traefik-public:
+    external: true
+
+services:
+  bltodoist:
+    image: registry.dev.gbms.site/bltodoist
+    networks:
+      - traefik-public
+    environment:
+      - APP_RABBITMQ__HOST=${APP_RABBITMQ__HOST?Variable not set}
+      - APP_RABBITMQ__USER=${APP_RABBITMQ__USER?Variable not set}
+      - APP_RABBITMQ__PASSWORD=${APP_RABBITMQ__PASSWORD?Variable not set}
+      - APP_RABBITMQ__VHOST=${APP_RABBITMQ__VHOST?Variable not set}
+    
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: replicated
+      replicas: 1
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.http.routers.bltodoist.rule=Host(`bltodoist.bl.gbms.site`)
+        - traefik.http.routers.bltodoist-http.entrypoints=http
+        - traefik.http.routers.bltodoist-http.service=bltodoist
+        - traefik.http.routers.bltodoist-http.rule=Host(`bltodoist.bl.gbms.site`)
+        - traefik.http.routers.bltodoist-http.middlewares=https-redirect
+        - traefik.http.routers.bltodoist.entrypoints=https
+        - traefik.http.routers.bltodoist.tls=true
+        - traefik.http.routers.bltodoist.tls.certresolver=le
+        - traefik.http.services.bltodoist.loadbalancer.server.port=80
+        - traefik.http.routers.bltodoist.service=bltodoist

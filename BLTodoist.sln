@@ -1,8 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLTodoist", "src\BLTodoist\BLTodoist.csproj", "{EDC4B644-2D20-4257-858A-369E43DAFE69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLTodoist.Contracts", "src\BLTodoist.Contracts\BLTodoist.Contracts.csproj", "{A7EC7C31-3EE6-485B-B4E1-684BFADAFFB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDC4B644-2D20-4257-858A-369E43DAFE69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC4B644-2D20-4257-858A-369E43DAFE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC4B644-2D20-4257-858A-369E43DAFE69}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EDC4B644-2D20-4257-858A-369E43DAFE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC4B644-2D20-4257-858A-369E43DAFE69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC4B644-2D20-4257-858A-369E43DAFE69}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A7EC7C31-3EE6-485B-B4E1-684BFADAFFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7EC7C31-3EE6-485B-B4E1-684BFADAFFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EC7C31-3EE6-485B-B4E1-684BFADAFFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7EC7C31-3EE6-485B-B4E1-684BFADAFFB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

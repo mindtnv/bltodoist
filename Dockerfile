@@ -7,6 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["./src/BLTodoist/BLTodoist.csproj", "./BLTodoist/"]
 COPY ["./src/BLTodoist.Contracts/BLTodoist.Contracts.csproj", "./BLTodoist.Contracts/"]
+RUN dotnet nuget add source https://baget.dev.gbms.site/v3/index.json -n gbms
 RUN dotnet restore "./BLTodoist/BLTodoist.csproj"
 RUN dotnet restore "./BLTodoist.Contracts/BLTodoist.Contracts.csproj"
 COPY ["./src/BLTodoist/", "./BLTodoist/"]

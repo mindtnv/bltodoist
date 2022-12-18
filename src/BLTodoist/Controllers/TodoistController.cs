@@ -37,7 +37,7 @@ public class TodoistController : ControllerBase
         var todo = new TodoDto
         {
             Content = item.Content ?? throw new ArgumentNullException(nameof(item.Content)),
-            Difficult = (int) (item.Priority ?? throw new ArgumentNullException(nameof(item.Priority))),
+            Difficult = 5 - (int) (item.Priority ?? throw new ArgumentNullException(nameof(item.Priority))),
         };
 
         if (request.EventName == "item:completed")

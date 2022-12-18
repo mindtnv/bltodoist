@@ -16,4 +16,8 @@
         <PackageReference Include="Todoist.Net" Version="3.0.1"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\BLTodoist.Contracts\BLTodoist.Contracts.csproj"/>
+    </ItemGroup>
+
 </Project>
